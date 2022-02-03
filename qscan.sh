@@ -17,7 +17,7 @@ if [ -f $INITIAL -o -f $FULL ];
 				notify-send "Initial Scan Started" "Host: $1"
 				nmap -Pn -sV -oN $INITIAL $1 >/dev/null
 				notify-send "Initial Scan Compelte/Begin Full Scan" "Host: $1"
-				nmap -Pn -sV -oN $FULL $1 >/dev/null
+				nmap -Pn -sV -p- -oN $FULL $1 >/dev/null
 				notify-send "Full Scan Complete!" "Host: $1"
 		fi
 fi
